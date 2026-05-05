@@ -1,0 +1,298 @@
+/* ============================================================
+   Dalsson Design System — Foundations
+   Colors, Type, Spacing, Radii, Shadows, Motion
+   ============================================================ */
+
+/* ---------- Google Fonts (substitutions flagged in README) ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ========== BRAND CORE ========== */
+  --brand-navy:         #0F2A4A;   /* primary — sampled from logo */
+  --brand-navy-deep:    #0A1F3D;   /* from brand notes */
+  --brand-copper:       #C49A4F;   /* accent — sampled from logo dot */
+  --brand-copper-deep:  #B87333;   /* richer copper from brand notes */
+  --brand-charcoal:     #1A1D21;   /* alt primary */
+
+  /* ========== NEUTRAL SCALE ========== */
+  --cream-50:   #FAFAF7;   /* off-white */
+  --cream-100:  #F5F1EA;   /* primary cream bg */
+  --cream-200:  #EDE7DB;   /* elevated cream */
+  --cream-300:  #E0D9C8;   /* divider-on-cream */
+
+  --ink-900:    #0D0D0D;   /* near black */
+  --ink-800:    #1A1D21;   /* charcoal */
+  --ink-700:    #2B2F35;
+  --ink-600:    #4A4F56;
+  --ink-500:    #6B7079;
+  --ink-400:    #9096A0;
+  --ink-300:    #C4C8CF;
+  --ink-200:    #E2E4E8;
+  --ink-100:    #EDEDED;   /* near white on dark */
+
+  /* ========== SEMANTIC — LIGHT (default) ========== */
+  --bg:         var(--cream-100);
+  --bg-elev:    var(--cream-50);
+  --bg-sunk:    var(--cream-200);
+  --bg-invert:  var(--brand-navy);
+
+  --fg:         var(--ink-900);       /* body text */
+  --fg-muted:   var(--ink-600);       /* secondary */
+  --fg-subtle:  var(--ink-500);       /* tertiary, captions */
+  --fg-faint:   var(--ink-400);       /* placeholder-ish */
+  --fg-invert:  var(--ink-100);
+
+  --accent:     var(--brand-copper);
+  --accent-ink: var(--brand-copper-deep);
+  --primary:    var(--brand-navy);
+
+  --hairline:   rgba(15, 42, 74, 0.12);   /* on cream */
+  --hairline-strong: rgba(15, 42, 74, 0.24);
+  --hairline-dark: rgba(237, 237, 237, 0.14); /* on navy */
+
+  /* ========== TYPE FAMILIES ==========
+     Headlines: editorial serif. Preference: Tiempos Headline / GT Sectra / Canela.
+     Substituted with Fraunces (Google) — closest editorial serif with similar ductal warmth.
+     Body: refined sans. Preference: Söhne / Inter. Using Inter.
+     Mono: JetBrains Mono. */
+  --font-serif:  'Fraunces', 'Tiempos Headline', 'GT Sectra', 'Canela', 'Playfair Display', Georgia, serif;
+  --font-sans:   'Inter', 'Söhne', 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:   'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* ========== TYPE SCALE ========== */
+  --fs-display:  clamp(3rem, 6vw, 5.5rem);     /* 48–88px */
+  --fs-h1:       clamp(2.25rem, 4vw, 3.5rem);   /* 36–56px */
+  --fs-h2:       clamp(1.75rem, 2.8vw, 2.5rem); /* 28–40px */
+  --fs-h3:       1.5rem;      /* 24 */
+  --fs-h4:       1.25rem;     /* 20 */
+  --fs-body:     1.0625rem;   /* 17 */
+  --fs-body-sm:  0.9375rem;   /* 15 */
+  --fs-caption:  0.8125rem;   /* 13 */
+  --fs-eyebrow:  0.6875rem;   /* 11 — small caps label */
+
+  /* Line heights */
+  --lh-tight:   1.08;
+  --lh-snug:    1.22;
+  --lh-normal:  1.55;
+  --lh-loose:   1.7;
+
+  /* Letter spacing */
+  --tr-display: -0.02em;
+  --tr-heading: -0.015em;
+  --tr-body:    0;
+  --tr-eyebrow: 0.14em;   /* generous for small caps */
+  --tr-caps-sm: 0.08em;
+
+  /* ========== SPACING (4px grid) ========== */
+  --s-0: 0;
+  --s-1: 0.25rem;   /* 4 */
+  --s-2: 0.5rem;    /* 8 */
+  --s-3: 0.75rem;   /* 12 */
+  --s-4: 1rem;      /* 16 */
+  --s-5: 1.5rem;    /* 24 */
+  --s-6: 2rem;      /* 32 */
+  --s-7: 3rem;      /* 48 */
+  --s-8: 4rem;      /* 64 */
+  --s-9: 6rem;      /* 96 */
+  --s-10: 8rem;     /* 128 */
+
+  /* ========== RADII (restrained: 4–8px) ========== */
+  --r-none: 0;
+  --r-sm: 4px;
+  --r-md: 6px;
+  --r-lg: 8px;
+  --r-pill: 999px;   /* used sparingly, for tag chips only */
+
+  /* ========== SHADOWS (subtle only) ========== */
+  --shadow-xs: 0 1px 2px rgba(15, 42, 74, 0.04);
+  --shadow-sm: 0 1px 3px rgba(15, 42, 74, 0.06), 0 1px 2px rgba(15, 42, 74, 0.04);
+  --shadow-md: 0 4px 12px rgba(15, 42, 74, 0.06), 0 1px 3px rgba(15, 42, 74, 0.04);
+  --shadow-lg: 0 12px 32px rgba(15, 42, 74, 0.08), 0 4px 8px rgba(15, 42, 74, 0.04);
+
+  /* ========== MOTION ========== */
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast:   150ms;
+  --dur-base:   240ms;
+  --dur-slow:   480ms;
+
+  /* ========== LAYOUT ========== */
+  --content-max: 1200px;
+  --content-narrow: 720px;
+  --gutter: clamp(1rem, 4vw, 3rem);
+}
+
+/* ===== DARK SURFACE (navy) — semantic overrides ===== */
+.on-navy, [data-surface="navy"] {
+  --bg: var(--brand-navy);
+  --bg-elev: #152F52;
+  --bg-sunk: #091C36;
+  --fg: var(--ink-100);
+  --fg-muted: rgba(237,237,237, 0.72);
+  --fg-subtle: rgba(237,237,237, 0.54);
+  --fg-faint: rgba(237,237,237, 0.38);
+  --hairline: rgba(237,237,237, 0.14);
+  --hairline-strong: rgba(237,237,237, 0.28);
+  color: var(--fg);
+  background: var(--bg);
+}
+
+/* ============================================================
+   SEMANTIC TYPOGRAPHY
+   ============================================================ */
+
+body, .ds-body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  color: var(--fg);
+  background: var(--bg);
+  font-feature-settings: 'ss01', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.ds-display {
+  font-family: var(--font-serif);
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-display);
+  font-weight: 400;
+  color: var(--fg);
+  text-wrap: pretty;
+}
+
+.ds-h1 {
+  font-family: var(--font-serif);
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-heading);
+  font-weight: 400;
+  color: var(--fg);
+  text-wrap: pretty;
+}
+
+.ds-h2 {
+  font-family: var(--font-serif);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tr-heading);
+  font-weight: 400;
+  color: var(--fg);
+}
+
+.ds-h3 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-snug);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  color: var(--fg);
+}
+
+.ds-h4 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-h4);
+  line-height: var(--lh-snug);
+  font-weight: 500;
+  color: var(--fg);
+}
+
+.ds-lead {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  line-height: var(--lh-normal);
+  font-weight: 300;
+  color: var(--fg-muted);
+}
+
+.ds-p {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  color: var(--fg);
+  max-width: 68ch;
+}
+
+.ds-small {
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-normal);
+  color: var(--fg-muted);
+}
+
+.ds-caption {
+  font-size: var(--fs-caption);
+  line-height: var(--lh-normal);
+  color: var(--fg-subtle);
+}
+
+.ds-eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-eyebrow);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-eyebrow);
+  font-weight: 500;
+  color: var(--accent-ink);
+}
+
+.ds-kicker {
+  font-family: var(--font-sans);
+  font-size: var(--fs-caption);
+  text-transform: uppercase;
+  letter-spacing: var(--tr-caps-sm);
+  font-weight: 500;
+  color: var(--fg-muted);
+}
+
+.ds-mono {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  letter-spacing: 0;
+  color: var(--fg);
+}
+
+/* Editorial accents */
+.ds-drop::first-letter {
+  font-family: var(--font-serif);
+  font-size: 3.6em;
+  float: left;
+  line-height: 0.88;
+  margin: 0.08em 0.08em 0 -0.04em;
+  color: var(--primary);
+  font-weight: 400;
+}
+
+/* Hairline divider */
+.ds-hairline {
+  border: none;
+  border-top: 1px solid var(--hairline);
+  margin: var(--s-6) 0;
+}
+
+.ds-hairline-strong {
+  border: none;
+  border-top: 1px solid var(--hairline-strong);
+  margin: var(--s-6) 0;
+}
+
+/* Links */
+.ds-link {
+  color: var(--fg);
+  text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size var(--dur-base) var(--ease-out), color var(--dur-fast);
+}
+.ds-link:hover {
+  color: var(--accent-ink);
+  background-size: 100% 1.5px;
+}
+
+/* Selection */
+::selection {
+  background: var(--brand-copper);
+  color: var(--brand-navy);
+}
