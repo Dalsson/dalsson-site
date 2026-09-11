@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="dalsson">
+  <rect width="64" height="64" rx="14" fill="#21222B"/>
+  <text x="29" y="47" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="46" fill="#F6F1E9" text-anchor="middle">d</text>
+  <circle cx="47" cy="45" r="5" fill="#BC6A4C"/>
+</svg>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dalsson.com/sitemap.xml
