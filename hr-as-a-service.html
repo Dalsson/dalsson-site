@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dalsson — hr as a service</title>
+<meta name="description" content="Dalsson HR as a Service: your entire people function, run for you end to end — advisory to payroll, software included, AI embedded, for about half the cost of an in-house team.">
+<link rel="canonical" href="https://dalsson.com/hr-as-a-service">
+<meta name="theme-color" content="#F6F1E9">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="dalsson">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://dalsson.com/hr-as-a-service">
+<meta property="og:title" content="HR as a Service — dalsson">
+<meta property="og:description" content="Your entire HR run on your Workday, software included, AI embedded — about half the cost of in-house. Transparent flat pricing, no lock-in, guarantees in writing.">
+<meta property="og:image" content="https://dalsson.com/og-hraas.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="dalsson HR as a Service — HR, fully run, about half the cost">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HR as a Service — dalsson">
+<meta name="twitter:description" content="Your whole people function, run on your Workday for about half the cost of in-house. No lock-in, guarantees in writing.">
+<meta name="twitter:image" content="https://dalsson.com/og-hraas.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F1E9;--paper2:#EFE6D8;--ink:#21222B;--ink2:#56535F;
+  --blue:#3C5E7F;--blue-d:#2B4660;--clay:#BC6A4C;--sage:#97A98C;
+  --sand:#D8BE82;--mist:#9FB6C2;--teal:#43666A;--soft:#E6E8E1;
+  --disp:'Fraunces',Georgia,serif;--body:'Space Grotesk',system-ui,sans-serif;--hand:'Caveat',cursive;
+  --spring:cubic-bezier(.34,1.4,.5,1);
+  --sh:6px 6px 0 rgba(33,34,43,.16);--sh-h:10px 10px 0 rgba(33,34,43,.18);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+svg{display:block}
+::selection{background:var(--sand);color:var(--ink)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes popin{0%{opacity:0;transform:translateY(38px) scale(.86)}70%{opacity:1;transform:translateY(-5px) scale(1.03)}100%{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes spinny{to{transform:rotate(360deg)}}
+.pop{opacity:0}.pop.go{animation:popin .7s var(--spring) forwards;animation-delay:var(--d,0s)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}.pop{opacity:1}}
+
+/* nav */
+nav.top{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:200;display:flex;align-items:center;gap:4px;
+  background:rgba(246,241,233,.92);backdrop-filter:blur(10px);border:2px solid var(--ink);border-radius:999px;padding:7px 9px;box-shadow:var(--sh);max-width:calc(100vw - 20px);white-space:nowrap}
+nav.top .logo{font-family:var(--disp);font-weight:700;font-size:19px;padding:0 12px;letter-spacing:-.01em}
+nav.top .logo i{color:var(--clay);font-style:normal}
+nav.top a.lnk{font-weight:600;font-size:13px;padding:8px 12px;border-radius:999px;transition:all .25s var(--spring)}
+nav.top a.lnk:hover{background:var(--sand);transform:rotate(-2deg) scale(1.05)}
+nav.top a.cta{background:var(--ink);color:var(--paper);font-weight:600;font-size:13px;padding:9px 15px;border-radius:999px;transition:all .25s var(--spring)}
+nav.top a.cta:hover{background:var(--blue);transform:rotate(1.5deg) scale(1.05)}
+@media(max-width:720px){nav.top a.lnk{display:none}}
+
+.wrap{max-width:1180px;margin:0 auto}
+section.block{position:relative;padding:84px 24px 96px}
+.kick{display:inline-block;font-family:var(--hand);font-size:26px;transform:rotate(-2deg);margin-bottom:10px;color:var(--blue)}
+h2.huge{font-family:var(--disp);font-weight:600;letter-spacing:-.02em;font-size:clamp(31px,4.6vw,58px);line-height:1.06;max-width:900px}
+h2.huge em{font-style:normal;color:var(--clay)}
+.subline{font-size:16px;font-weight:500;margin-top:14px;max-width:600px;line-height:1.6;color:var(--ink2)}
+.wave{display:block;width:100%;height:54px;margin-bottom:-1px}
+
+/* hero */
+.hero{position:relative;padding:124px 24px 70px;background:radial-gradient(115% 80% at 80% 0%, #F3E8D2 0%, var(--paper) 60%);overflow:hidden}
+.hero .crumb{font-weight:600;font-size:13px;color:var(--ink2);margin-bottom:14px}
+.hero .crumb a{border-bottom:2px solid var(--sand)}
+.hero .hello{font-family:var(--hand);font-size:clamp(22px,2.6vw,30px);color:var(--blue);transform:rotate(-2deg);margin-bottom:8px}
+.hero h1{font-family:var(--disp);font-weight:600;letter-spacing:-.02em;font-size:clamp(38px,5.4vw,72px);line-height:1.02}
+.hero h1 .mark{font-style:normal;background:var(--sand);padding:0 .12em;border-radius:.1em;display:inline-block;transform:rotate(-1.2deg)}
+.hero h1 em{font-style:normal;color:var(--clay)}
+.hero p.sub{font-size:clamp(15px,1.5vw,18.5px);line-height:1.62;color:var(--ink2);max-width:600px;margin-top:22px;font-weight:500}
+.hero p.sub b{color:var(--ink);font-weight:600}
+.hero-ctas{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.bigbtn{font-family:var(--disp);font-weight:600;font-size:15.5px;background:var(--ink);color:var(--paper);padding:16px 28px;border-radius:999px;border:2px solid var(--ink);box-shadow:var(--sh);transition:all .22s var(--spring);display:inline-block}
+.bigbtn:hover{transform:translateY(-3px) rotate(-1deg);box-shadow:var(--sh-h);background:var(--blue)}
+.bigbtn:active{transform:translateY(2px);box-shadow:3px 3px 0 rgba(33,34,43,.2)}
+.bigbtn.ghost{background:var(--paper);color:var(--ink)}
+.bigbtn.ghost:hover{background:var(--sand);color:var(--ink)}
+.trust{display:flex;gap:26px;flex-wrap:wrap;margin-top:34px}
+.trust .ti{display:flex;flex-direction:column}
+.trust .ti b{font-family:var(--disp);font-weight:700;font-size:clamp(26px,3vw,38px);color:var(--blue-d);line-height:1}
+.trust .ti span{font-size:12.5px;font-weight:600;color:var(--ink2);margin-top:5px}
+
+/* streams */
+.streams-sec{background:var(--ink);color:var(--paper)}
+.streams-sec .kick{color:var(--sand)}
+.streams-sec .subline{color:rgba(246,241,233,.82)}
+.hr-streams{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:50px}
+@media(max-width:900px){.hr-streams{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.hr-streams{grid-template-columns:1fr}}
+.stream{background:rgba(246,241,233,.05);border:2px solid rgba(246,241,233,.22);border-radius:16px;padding:16px;transform:rotate(var(--r,0deg));transition:transform .25s var(--spring),background .25s}
+.stream:hover{transform:rotate(0deg) translateY(-5px);background:rgba(246,241,233,.1)}
+.stream:nth-child(4n+1){--r:-.8deg}.stream:nth-child(4n+2){--r:.7deg}.stream:nth-child(4n+3){--r:.6deg}.stream:nth-child(4n){--r:-.7deg}
+.stream .si{width:34px;height:34px;border-radius:10px;background:var(--blue);border:2px solid var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:13.5px;color:var(--paper);margin-bottom:11px}
+.stream:nth-child(3n) .si{background:var(--clay)}.stream:nth-child(3n+1) .si{background:var(--sage);color:var(--ink)}
+.stream .st{font-family:var(--disp);font-weight:600;font-size:15.5px;line-height:1.18}
+.stream .sp{font-size:12px;line-height:1.45;color:rgba(246,241,233,.7);margin-top:5px;font-weight:500}
+
+/* how it works */
+.how{background:var(--paper)}
+.how .kick{color:var(--clay)}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-top:44px}
+.tab{font-family:var(--disp);font-weight:600;font-size:14px;border:2px solid var(--ink);border-radius:999px;padding:10px 18px;background:var(--paper);transition:all .2s var(--spring);display:flex;align-items:center;gap:9px}
+.tab .tn{width:24px;height:24px;border-radius:50%;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+.tab:hover{transform:translateY(-2px)}
+.tab.on{background:var(--blue);color:var(--paper);border-color:var(--blue)}
+.tab.on .tn{background:var(--sand);color:var(--ink)}
+.panel{margin-top:26px;border:2px solid var(--ink);border-radius:24px;background:var(--paper2);box-shadow:var(--sh);padding:32px 30px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+@media(max-width:820px){.panel{grid-template-columns:1fr;gap:22px}}
+.panel h3{font-family:var(--disp);font-weight:600;font-size:clamp(21px,2.3vw,30px);letter-spacing:-.01em}
+.panel .when{font-family:var(--hand);font-size:23px;color:var(--blue);transform:rotate(-1.5deg);margin-bottom:4px}
+.panel p{font-size:14.5px;line-height:1.6;font-weight:500;margin-top:10px;color:var(--ink2)}
+.panel .ex{margin-top:18px;background:var(--ink);color:var(--paper);border-radius:14px;padding:16px 18px;font-size:13px;line-height:1.7}
+.panel .ex b{color:var(--sand);font-family:var(--disp)}
+.panel .ex .row{display:flex;gap:9px;align-items:flex-start;margin-top:7px}
+.panel .ex .row:first-of-type{margin-top:12px}
+.panel .ex .tick{color:var(--sage);font-weight:700}
+.flowcard{background:var(--paper);border:2px solid var(--ink);border-radius:18px;box-shadow:var(--sh);padding:22px;transform:rotate(1deg)}
+.flowcard .fl{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:2px dashed rgba(33,34,43,.18)}
+.flowcard .fl:last-child{border-bottom:none}
+.flowcard .fl .d{width:32px;height:32px;flex:none;border-radius:9px;background:var(--soft);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:15px}
+.flowcard .fl .ft{font-size:13px;font-weight:600;line-height:1.3}
+.flowcard .fl .ft span{display:block;font-size:11px;font-weight:500;color:var(--ink2)}
+
+/* calculator */
+.calc{background:var(--blue-d);color:var(--paper);overflow:hidden}
+.calc .kick{color:var(--sand)}
+.calc .subline{color:rgba(246,241,233,.82)}
+.calc-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:30px;margin-top:48px;align-items:stretch}
+@media(max-width:880px){.calc-grid{grid-template-columns:1fr}}
+.calc-controls{background:rgba(246,241,233,.06);border:2px solid rgba(246,241,233,.25);border-radius:24px;padding:30px 28px}
+.calc-controls label{font-weight:600;font-size:14px;display:block}
+.empline{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px}
+.empline .ev{font-family:var(--disp);font-weight:700;font-size:38px;color:var(--sand);line-height:1}
+.empline .ev small{font-size:15px;color:var(--paper);font-weight:600;margin-left:4px;font-family:var(--body)}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:10px;border-radius:999px;background:rgba(246,241,233,.2);border:2px solid var(--paper);outline:none;margin:10px 0 6px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:28px;height:28px;border-radius:50%;background:var(--sand);border:3px solid var(--ink);cursor:pointer;transition:transform .15s}
+input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.12)}
+input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:var(--sand);border:3px solid var(--ink);cursor:pointer}
+.rangeends{display:flex;justify-content:space-between;font-size:11.5px;font-weight:600;color:rgba(246,241,233,.6)}
+.toggle{display:flex;gap:8px;margin-top:24px;background:rgba(33,34,43,.35);border-radius:999px;padding:5px;border:2px solid rgba(246,241,233,.25)}
+.toggle button{flex:1;font-weight:600;font-size:12.5px;padding:9px 8px;border-radius:999px;color:var(--paper);transition:all .2s}
+.toggle button.on{background:var(--sand);color:var(--ink)}
+.tnote{font-size:11.5px;color:rgba(246,241,233,.62);margin-top:12px;line-height:1.45}
+.calc-out{background:var(--paper);color:var(--ink);border:2px solid var(--ink);border-radius:24px;box-shadow:var(--sh-h);padding:30px 28px;display:flex;flex-direction:column}
+.bigsave{font-family:var(--disp);font-weight:700;font-size:clamp(40px,5.5vw,64px);letter-spacing:-.02em;color:var(--clay);line-height:1;font-variant-numeric:tabular-nums}
+.bigsave-l{font-size:13.5px;font-weight:600;color:var(--ink2);margin-top:6px}
+.bars{margin-top:26px}
+.barbox{margin-bottom:16px}
+.barbox .bl{display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:6px}
+.barbox .bl b{font-family:var(--disp);font-variant-numeric:tabular-nums}
+.bar-track{height:30px;border:2px solid var(--ink);border-radius:999px;background:var(--paper2);overflow:hidden}
+.bar-fill{height:100%;border-radius:999px 0 0 999px;width:0;transition:width .5s var(--spring)}
+.bar-fill.full{background:repeating-linear-gradient(45deg,var(--mist),var(--mist) 9px,#bcccd4 9px,#bcccd4 18px)}
+.bar-fill.us{background:var(--clay)}
+.calc-foot{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:auto;padding-top:24px}
+.miniwn{border:2px solid var(--ink);border-radius:14px;padding:13px 12px;text-align:center;background:var(--paper2)}
+.miniwn b{font-family:var(--disp);font-weight:700;font-size:20px;display:block;font-variant-numeric:tabular-nums}
+.miniwn span{font-size:10.5px;font-weight:600;color:var(--ink2);line-height:1.3;display:block;margin-top:3px}
+
+/* benefit matrix */
+.matrix-sec{background:var(--soft)}
+.matrix-wrap{margin-top:46px;overflow-x:auto;border:2px solid var(--ink);border-radius:22px;box-shadow:var(--sh);background:var(--paper)}
+table.matrix{width:100%;border-collapse:collapse;min-width:680px}
+table.matrix th,table.matrix td{padding:15px 16px;text-align:left;border-bottom:2px solid rgba(33,34,43,.12);font-size:13.5px}
+table.matrix thead th{font-family:var(--disp);font-weight:600;font-size:15px;background:var(--paper2);position:sticky;top:0}
+table.matrix thead th.us{background:var(--blue);color:var(--paper)}
+table.matrix td.dim{color:var(--ink2);font-weight:500}
+table.matrix td.us{background:rgba(60,94,127,.09);font-weight:600}
+table.matrix td.us .tick{color:var(--sage);font-weight:700;margin-right:5px}
+table.matrix tbody tr:last-child td{border-bottom:none}
+table.matrix .rowh{font-weight:600}
+table.matrix tbody tr:hover td{background:rgba(216,190,130,.16)}
+table.matrix tbody tr:hover td.us{background:rgba(60,94,127,.16)}
+
+/* best practices */
+.bp-sec{background:var(--paper)}
+.bp-sec .kick{color:var(--blue)}
+.bp-list{margin-top:42px;display:flex;flex-direction:column;gap:12px}
+.bp{border:2px solid var(--ink);border-radius:18px;background:var(--paper2);box-shadow:var(--sh);overflow:hidden;transition:transform .25s var(--spring)}
+.bp:hover{transform:translateY(-3px)}
+.bp .bph{display:flex;align-items:center;gap:14px;padding:18px 22px;cursor:pointer}
+.bp .bpn{font-family:var(--disp);font-weight:700;font-size:17px;color:var(--clay);flex:none;width:30px}
+.bp .bpt{font-family:var(--disp);font-weight:600;font-size:clamp(16px,2vw,20px);flex:1}
+.bp .bpx{font-size:24px;font-weight:600;transition:transform .3s var(--spring);flex:none}
+.bp.open .bpx{transform:rotate(45deg)}
+.bp .bpb{max-height:0;overflow:hidden;transition:max-height .35s ease;padding:0 22px}
+.bp.open .bpb{max-height:200px;padding:0 22px 20px}
+.bp .bpb p{font-size:14px;line-height:1.6;font-weight:500;color:var(--ink2)}
+
+/* final cta */
+.cta-sec{background:var(--ink);color:var(--paper);text-align:center;overflow:hidden}
+.cta-sec h2.huge{margin:0 auto}
+.cta-sec .subline{margin:14px auto 0;color:rgba(246,241,233,.82)}
+.megabtn{margin-top:40px;display:inline-block;font-family:var(--disp);font-weight:700;font-size:clamp(20px,3vw,32px);letter-spacing:-.01em;background:var(--clay);color:var(--paper);padding:26px 50px;border-radius:999px;border:2px solid var(--paper);box-shadow:var(--sh-h);transition:all .22s var(--spring);animation:floaty 6s ease-in-out infinite}
+.megabtn:hover{transform:scale(1.05) rotate(-1.5deg);background:var(--blue)}
+.megabtn:active{transform:translateY(4px)}
+.cta-sec .alt{margin-top:24px;display:flex;gap:26px;justify-content:center;flex-wrap:wrap;font-weight:600;font-size:15px}
+.cta-sec .alt a{border-bottom:3px solid var(--sand)}
+.cta-sec .note{font-family:var(--hand);font-size:23px;margin-top:24px;color:var(--sand);transform:rotate(-1.5deg)}
+
+footer{background:var(--blue-d);color:var(--paper);padding:32px 24px;text-align:center;font-weight:500;font-size:13px}
+footer .flogo{font-family:var(--disp);font-weight:700;font-size:22px;display:block;margin-bottom:10px}
+footer .flogo i{color:var(--sand);font-style:normal}
+footer nav{display:flex;gap:22px;justify-content:center;margin-top:14px;opacity:.78}
+footer nav a:hover{color:var(--sand)}
+
+/* pricing tiers */
+.pricing-sec{background:var(--paper)}
+.pricing-sec .kick{color:var(--clay)}
+.tiers{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
+@media(max-width:760px){.tiers{grid-template-columns:1fr}}
+.tier{border:2px solid var(--ink);border-radius:24px;background:var(--paper2);box-shadow:var(--sh);padding:30px 28px;transform:rotate(var(--r,0deg));transition:transform .3s var(--spring)}
+.tier:hover{transform:rotate(0) translateY(-6px)}
+.tier.feat{background:var(--ink);color:var(--paper)}
+.tier .tname{font-family:var(--disp);font-weight:600;font-size:15px;text-transform:uppercase;letter-spacing:.08em}
+.tier .price{font-family:var(--disp);font-weight:700;font-size:46px;letter-spacing:-.02em;margin-top:4px;line-height:1}
+.tier .price small{font-family:var(--body);font-size:14px;font-weight:600;color:var(--ink2)}
+.tier.feat .price small{color:rgba(246,241,233,.72)}
+.tier .punit{font-size:13px;font-weight:600;color:var(--ink2);margin-top:5px}
+.tier.feat .punit{color:rgba(246,241,233,.72)}
+.tier ul{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:10px}
+.tier li{font-size:13.5px;font-weight:500;line-height:1.45;display:flex;gap:9px;align-items:flex-start}
+.tier .ck{color:var(--sage);font-weight:700;flex:none}
+.tier.feat .ck{color:var(--sand)}
+.leverage{margin-top:32px;text-align:center;font-family:var(--hand);font-size:24px;color:var(--clay);transform:rotate(-1deg)}
+.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+@media(max-width:640px){.proof{grid-template-columns:1fr}}
+.proof .pf{border:2px solid var(--ink);border-radius:16px;padding:18px 16px;text-align:center;background:var(--paper2)}
+.proof .pf b{display:block;font-family:var(--disp);font-weight:700;font-size:30px;color:var(--blue-d);line-height:1;font-variant-numeric:tabular-nums}
+.proof .pf span{display:block;font-size:11.5px;font-weight:600;color:var(--ink2);margin-top:8px;line-height:1.35}
+/* guarantees */
+.guar-sec{background:var(--blue);color:var(--paper)}
+.guar-sec .kick{color:var(--sand)}
+.guar-sec .subline{color:rgba(246,241,233,.85)}
+.guards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}
+@media(max-width:820px){.guards{grid-template-columns:1fr}}
+.guard{background:var(--paper);color:var(--ink);border:2px solid var(--ink);border-radius:20px;box-shadow:var(--sh);padding:24px 22px;transform:rotate(var(--r,0deg));transition:transform .3s var(--spring)}
+.guard:hover{transform:rotate(0) translateY(-6px)}
+.guard:nth-child(3n+1){--r:-1deg}.guard:nth-child(3n+2){--r:.8deg}.guard:nth-child(3n){--r:-.6deg}
+.guard .gi{width:44px;height:44px;border-radius:12px;background:var(--sage);border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px}
+.guard:nth-child(2n) .gi{background:var(--sand)}
+.guard h4{font-family:var(--disp);font-weight:600;font-size:17.5px;margin-bottom:7px}
+.guard p{font-size:13px;line-height:1.5;font-weight:500;color:var(--ink2)}
+.guar-stamp{text-align:center;margin-top:42px;font-family:var(--hand);font-size:24px;color:var(--sand);transform:rotate(-1deg)}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:9998}
+</style>
+</head>
+<body>
+<canvas id="confetti"></canvas>
+
+<nav class="top">
+  <a class="logo" href="/">dalsson<i>.</i></a>
+  <a class="lnk" href="/#top">← main site</a>
+  <a class="lnk" href="#how">how it works</a>
+  <a class="lnk" href="#calc">the maths</a>
+  <a class="lnk" href="#pricing">pricing</a>
+  <a class="lnk" href="#guarantees">guarantees</a>
+  <a class="cta" href="#book">book a call ↗</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="crumb"><a href="/">dalsson</a> · hr as a service</div>
+    <div class="hello">the whole people function, off your plate ✺</div>
+    <h1>your entire hr,<br>run on <span class="mark">your workday.</span></h1>
+    <p class="sub">stop hiring an hr team and buying software you have to run yourself. we operate the <b>whole function</b> end to end — advisory, hiring, payroll, benefits, compliance — on <b>your own workday tenant</b>, with a named senior partner and ai doing the heavy lifting. about half the cost of in house, backed by guarantees, with no lock in.</p>
+    <div class="hero-ctas">
+      <a class="bigbtn" href="#book">book a strategy call</a>
+      <a class="bigbtn ghost" href="#pricing">see pricing &amp; guarantees ↓</a>
+    </div>
+    <div class="trust">
+      <div class="ti"><b>½</b><span>the cost of an<br>in-house team</span></div>
+      <div class="ti"><b>A–Z</b><span>advisory to payroll,<br>fully run</span></div>
+      <div class="ti"><b>1</b><span>named senior<br>partner, accountable</span></div>
+      <div class="ti"><b>0</b><span>lock-in.<br>leave anytime</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- STREAMS -->
+<svg class="wave" viewBox="0 0 1440 54" preserveAspectRatio="none" style="background:var(--paper)"><path d="M0,30 C300,56 600,4 900,28 C1150,48 1320,12 1440,28 L1440,54 L0,54 Z" fill="#21222B"/></svg>
+<section class="block streams-sec" id="streams">
+  <div class="wrap">
+    <span class="kick pop">everything you hand over</span>
+    <h2 class="huge pop" style="--d:.1s">eight streams.<br>one <em>accountable</em> partner.</h2>
+    <p class="subline pop" style="--d:.2s">we don't cherry-pick the easy bits. we take the entire people function, A to Z — and operate the software it runs on.</p>
+    <div class="hr-streams">
+      <div class="stream pop" style="--d:.05s"><div class="si">1</div><div class="st">strategy &amp; advisory</div><div class="sp">org design, comp frameworks and the hard people calls.</div></div>
+      <div class="stream pop" style="--d:.1s"><div class="si">2</div><div class="st">hiring &amp; onboarding</div><div class="sp">job post to signed contract to a great day one.</div></div>
+      <div class="stream pop" style="--d:.15s"><div class="si">3</div><div class="st">payroll &amp; tax</div><div class="sp">accurate, on time, every cycle. multi-country ready.</div></div>
+      <div class="stream pop" style="--d:.2s"><div class="si">4</div><div class="st">benefits &amp; comp</div><div class="sp">admin, enrolment and renewals, off your plate.</div></div>
+      <div class="stream pop" style="--d:.25s"><div class="si">5</div><div class="st">compliance &amp; law</div><div class="sp">policies, audits and filings kept current, not catching up.</div></div>
+      <div class="stream pop" style="--d:.3s"><div class="si">6</div><div class="st">performance &amp; engagement</div><div class="sp">reviews, surveys and the follow-through that usually slips.</div></div>
+      <div class="stream pop" style="--d:.35s"><div class="si">7</div><div class="st">offboarding</div><div class="sp">clean, compliant, humane exits handled end to end.</div></div>
+      <div class="stream pop" style="--d:.4s"><div class="si">8</div><div class="st">we run the software</div><div class="sp">your hcm + payroll platform, configured and operated by us.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<svg class="wave" viewBox="0 0 1440 54" preserveAspectRatio="none" style="background:var(--ink)"><path d="M0,28 C300,54 600,4 900,28 C1150,46 1320,12 1440,28 L1440,54 L0,54 Z" fill="#F6F1E9"/></svg>
+<section class="block how" id="how">
+  <div class="wrap">
+    <span class="kick pop">how it actually works</span>
+    <h2 class="huge pop" style="--d:.1s">live in <em>days</em>, run for good.</h2>
+    <p class="subline pop" style="--d:.2s">four phases, then a steady rhythm. click through to see what each one looks like in practice.</p>
+    <div class="tabs" id="tabs"></div>
+    <div id="panelHost"></div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<svg class="wave" viewBox="0 0 1440 54" preserveAspectRatio="none" style="background:var(--paper)"><path d="M0,28 C300,54 600,4 900,28 C1150,46 1320,12 1440,28 L1440,54 L0,54 Z" fill="#2B4660"/></svg>
+<section class="block calc" id="calc">
+  <div class="wrap">
+    <span class="kick pop">the maths, in your favour</span>
+    <h2 class="huge pop" style="--d:.1s">drag the slider.<br>watch the <em>savings.</em></h2>
+    <p class="subline pop" style="--d:.2s">baselined against what companies actually spend on in-house hr. most land between $2,500 a year (a lean, best-in-class team) and $3,600 (typical). we run the whole thing, software included, for $1,500 per employee a year.</p>
+    <div class="calc-grid">
+      <div class="calc-controls pop" style="--d:.1s">
+        <div class="empline"><label for="emp">company size</label><span class="ev"><span id="empVal">100</span><small>employees</small></span></div>
+        <input type="range" id="emp" min="25" max="500" step="5" value="100">
+        <div class="rangeends"><span>25</span><span>500</span></div>
+        <div class="toggle" id="modeToggle">
+          <button data-mode="typ" class="on">vs typical in-house</button>
+          <button data-mode="lean">vs lean in-house</button>
+        </div>
+        <p class="tnote" id="tnote">typical: what most mid-market companies spend in house, about $3,600 per employee a year (PwC). dalsson core runs the whole function for $1,500, software included.</p>
+      </div>
+      <div class="calc-out pop" style="--d:.2s">
+        <div class="bigsave" id="saveBig">$210,000</div>
+        <div class="bigsave-l" id="saveLbl">saved every year vs in-house · for 100 employees</div>
+        <div class="bars">
+          <div class="barbox">
+            <div class="bl"><span id="lblIn">in-house (typical)</span><b id="valIn">$360,000</b></div>
+            <div class="bar-track"><div class="bar-fill full" id="barIn"></div></div>
+          </div>
+          <div class="barbox">
+            <div class="bl"><span>dalsson hr as a service</span><b id="valDal">$150,000</b></div>
+            <div class="bar-track"><div class="bar-fill us" id="barDal"></div></div>
+          </div>
+        </div>
+        <div class="calc-foot">
+          <div class="miniwn"><b id="m3yr">$630k</b><span>saved over 3 years</span></div>
+          <div class="miniwn"><b id="mPm">$125</b><span>per employee / month</span></div>
+          <div class="miniwn"><b id="mPct">58%</b><span>lower cost</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<svg class="wave" viewBox="0 0 1440 54" preserveAspectRatio="none" style="background:var(--blue-d)"><path d="M0,28 C300,54 600,4 900,28 C1150,46 1320,12 1440,28 L1440,54 L0,54 Z" fill="#F6F1E9"/></svg>
+<section class="block pricing-sec" id="pricing">
+  <div class="wrap">
+    <span class="kick pop">transparent, flat, published</span>
+    <h2 class="huge pop" style="--d:.1s">one flat price.<br>no <em>surprises.</em></h2>
+    <p class="subline pop" style="--d:.2s">a single fee per employee per month. published, capped, no percent-of-payroll games and no invoice that lands 40% over the quote. about half the cost of running hr in house.</p>
+    <div class="tiers">
+      <div class="tier pop" style="--d:.1s;--r:-1deg">
+        <div class="tname">core</div>
+        <div class="price">$125<small> /employee /mo</small></div>
+        <div class="punit">the whole function, fully run</div>
+        <ul>
+          <li><span class="ck">✓</span><span>all eight streams, advisory to payroll, A to Z</span></li>
+          <li><span class="ck">✓</span><span>your workday tenant configured and operated by us</span></li>
+          <li><span class="ck">✓</span><span>ai embedded in payroll, onboarding and compliance</span></li>
+          <li><span class="ck">✓</span><span>one named senior partner, accountable</span></li>
+          <li><span class="ck">✓</span><span>every guarantee below, in writing</span></li>
+        </ul>
+      </div>
+      <div class="tier feat pop" style="--d:.2s;--r:1deg">
+        <div class="tname">plus</div>
+        <div class="price">$175<small> /employee /mo</small></div>
+        <div class="punit">core, with more depth and reach</div>
+        <ul>
+          <li><span class="ck">✓</span><span>everything in core</span></li>
+          <li><span class="ck">✓</span><span>deeper strategic advisory and org design</span></li>
+          <li><span class="ck">✓</span><span>benefits brokerage and renewals managed</span></li>
+          <li><span class="ck">✓</span><span>multi-country nordics &amp; dach coverage</span></li>
+          <li><span class="ck">✓</span><span>monthly, not quarterly, partner reviews</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="proof pop" style="--d:.3s">
+      <div class="pf"><b>198/214</b><span>requirements auto-mapped by ai, the rest to a senior human</span></div>
+      <div class="pf"><b>99.1%</b><span>of records clean on the first payroll migration pass</span></div>
+      <div class="pf"><b>&lt;4h</b><span>response from a named partner, not a ticket queue</span></div>
+    </div>
+    <div class="leverage">priced this low because ai does the heavy lifting — leverage, not a discount ✦</div>
+  </div>
+</section>
+
+<!-- GUARANTEES -->
+<svg class="wave" viewBox="0 0 1440 54" preserveAspectRatio="none" style="background:var(--paper)"><path d="M0,28 C300,54 600,4 900,28 C1150,46 1320,12 1440,28 L1440,54 L0,54 Z" fill="#3C5E7F"/></svg>
+<section class="block guar-sec" id="guarantees">
+  <div class="wrap">
+    <span class="kick pop">the part nobody else puts in writing</span>
+    <h2 class="huge pop" style="--d:.1s">all the risk,<br>on <em>us.</em></h2>
+    <p class="subline pop" style="--d:.2s">the reasons companies leave their hr provider — hidden fees, lock in, junior service — we guarantee away, up front.</p>
+    <div class="guards">
+      <div class="guard pop" style="--d:.05s"><div class="gi">🔓</div><h4>no lock-in</h4><p>leave on 60 days notice. no termination penalty, no de-implementation fee, ever. you stay because it works.</p></div>
+      <div class="guard pop" style="--d:.1s"><div class="gi">🏷️</div><h4>transparent, capped pricing</h4><p>one published flat fee per employee, any annual increase capped at 4%. no percent-of-payroll, no surprise line items.</p></div>
+      <div class="guard pop" style="--d:.15s"><div class="gi">✅</div><h4>payroll accuracy guarantee</h4><p>if an error is ours, it is on us: we fix it and cover any resulting penalty. scoped to our mistakes, in writing.</p></div>
+      <div class="guard pop" style="--d:.2s"><div class="gi">🔑</div><h4>you own your tenant &amp; data</h4><p>your workday tenant and every record stay yours. leave with all of it, any time. nothing held hostage.</p></div>
+      <div class="guard pop" style="--d:.25s"><div class="gi">🎯</div><h4>90-day proof window</h4><p>if we miss our published slas in the first 90 days, walk away free. confidence, made checkable.</p></div>
+      <div class="guard pop" style="--d:.3s"><div class="gi">🛡️</div><h4>you stay the employer</h4><p>this is a managed service, not co-employment. we run the function, you keep the relationship and the control.</p></div>
+    </div>
+    <div class="guar-stamp">no lock-in. capped pricing. our errors, our cost. you own everything. ✓</div>
+  </div>
+</section>
+
+<!-- BENEFIT MATRIX -->
+<svg class="wave" viewBox="0 0 1440 54" preserveAspectRatio="none" style="background:var(--blue)"><path d="M0,28 C300,54 600,4 900,28 C1150,46 1320,12 1440,28 L1440,54 L0,54 Z" fill="#E6E8E1"/></svg>
+<section class="block matrix-sec" id="matrix">
+  <div class="wrap">
+    <span class="kick pop" style="color:var(--clay)">why this beats the alternatives</span>
+    <h2 class="huge pop" style="--d:.1s">in-house vs outsourcer vs <em>us.</em></h2>
+    <p class="subline pop" style="--d:.2s">most providers hand you a ticket queue and a login. we hand you a finished people function.</p>
+    <div class="matrix-wrap pop" style="--d:.2s">
+      <table class="matrix">
+        <thead><tr><th>what matters</th><th>in-house team</th><th>typical outsourcer</th><th class="us">dalsson hraas</th></tr></thead>
+        <tbody>
+          <tr><td class="rowh">cost / employee / yr</td><td class="dim">$2,500–3,600</td><td class="dim">$2,500–4,800, often hidden</td><td class="us">$1,500, all in</td></tr>
+          <tr><td class="rowh">pricing</td><td class="dim">salaries + tools</td><td class="dim">hidden, rises yearly</td><td class="us"><span class="tick">✓</span>published flat, capped 4%</td></tr>
+          <tr><td class="rowh">coverage</td><td class="dim">partial — you fill gaps</td><td class="dim">modular, pick &amp; pay</td><td class="us"><span class="tick">✓</span>full A–Z, nothing left over</td></tr>
+          <tr><td class="rowh">seniority on your account</td><td class="dim">whoever you can hire</td><td class="dim">often junior pods</td><td class="us"><span class="tick">✓</span>named senior partner</td></tr>
+          <tr><td class="rowh">software</td><td class="dim">you buy, you run it</td><td class="dim">their platform, you operate</td><td class="us"><span class="tick">✓</span>your workday, run for you</td></tr>
+          <tr><td class="rowh">ai embedded</td><td class="dim">rarely, if ever</td><td class="dim">bolt-on, extra cost</td><td class="us"><span class="tick">✓</span>native, instrumented</td></tr>
+          <tr><td class="rowh">lock-in / exit</td><td class="dim">n/a</td><td class="dim">1–3 yr, exit penalties</td><td class="us"><span class="tick">✓</span>none, leave on 60 days</td></tr>
+          <tr><td class="rowh">who's the employer</td><td class="dim">you</td><td class="dim">peo co-employment</td><td class="us"><span class="tick">✓</span>you, we just run it</td></tr>
+          <tr><td class="rowh">accountability</td><td class="dim">internal, stretched</td><td class="dim">shared ticket queue</td><td class="us"><span class="tick">✓</span>one partner, on the hook</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- BEST PRACTICES -->
+<svg class="wave" viewBox="0 0 1440 54" preserveAspectRatio="none" style="background:var(--soft)"><path d="M0,28 C300,54 600,4 900,28 C1150,46 1320,12 1440,28 L1440,54 L0,54 Z" fill="#F6F1E9"/></svg>
+<section class="block bp-sec" id="bp">
+  <div class="wrap">
+    <span class="kick pop">how we run it well</span>
+    <h2 class="huge pop" style="--d:.1s">our operating <em>principles.</em></h2>
+    <p class="subline pop" style="--d:.2s">the best practices we hold every engagement to. tap to open.</p>
+    <div class="bp-list" id="bpList"></div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<svg class="wave" viewBox="0 0 1440 54" preserveAspectRatio="none" style="background:var(--paper)"><path d="M0,28 C300,54 600,4 900,28 C1150,46 1320,12 1440,28 L1440,54 L0,54 Z" fill="#21222B"/></svg>
+<section class="block cta-sec" id="book">
+  <div class="wrap">
+    <span class="kick pop" style="color:var(--sand)">the easy part</span>
+    <h2 class="huge pop" style="--d:.1s">hand us your hr.<br>get your time <em>back.</em></h2>
+    <p class="subline pop" style="--d:.2s">a 30-minute call, with the founder. bring your messiest people problem — we'll tell you exactly how we'd run it, and what you'd save.</p>
+    <a class="megabtn pop" style="--d:.3s" id="megaBtn" href="mailto:partners@dalsson.com?subject=hr%20as%20a%20service">book a strategy call ↗</a>
+    <div class="alt pop" style="--d:.4s">
+      <a href="mailto:partners@dalsson.com">partners@dalsson.com</a>
+      <a href="tel:+46793283820">+46 793 28 38 20</a>
+    </div>
+    <div class="note pop" style="--d:.5s">no slide-ware. just the plan and the number →</div>
+  </div>
+</section>
+
+<footer>
+  <span class="flogo">dalsson<i>.</i></span>
+  hr as a service · independent workday practice · malmö · nordics · dach
+  <nav><a href="/">main site</a><a href="/#suite">ai suite</a><a href="#book">book a call</a></nav>
+</footer>
+
+<script>
+const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const fmt=n=>"$"+Math.round(n).toLocaleString("en-US");
+const fmtK=n=>n>=1000?"$"+(Math.round(n/1000)).toLocaleString("en-US")+"k":"$"+Math.round(n);
+
+/* ---- how-it-works tabs ---- */
+const PHASES=[
+  {n:1,tab:"discover",when:"week 1",h:"discovery & design",
+   p:"we map your people needs, headcount plan and obligations across every country you operate in, then design the target operating model and pick the platform configuration.",
+   ex:["new client kickoff","current state audited across 4 countries","target model + policy set agreed","senior partner assigned + named"]},
+  {n:2,tab:"stand-up",when:"week 1–2",h:"stand-up & migrate",
+   p:"we configure the hcm and payroll platform, migrate and validate your data, load policies, contracts and pay rules — and rehearse the first payroll before it ever runs live.",
+   ex:["tenant configured to your model","100 employee records migrated, 99% clean","first payroll rehearsed + reconciled","employee self-service switched on"]},
+  {n:3,tab:"go-live",when:"day one",h:"go live",
+   p:"payroll runs, the helpdesk opens, onboarding and approvals flow. your team keeps working — the function simply starts running underneath them, owned by us.",
+   ex:["first live payroll: on time, zero errors","helpdesk live, &lt;4h response","onboarding flow triggers automatically","you do nothing"]},
+  {n:4,tab:"run & optimise",when:"every month",h:"run & optimise",
+   p:"monthly cycles run like clockwork, ai watches for drift and compliance gaps, and a senior partner brings you a quarterly review of cost, risk and what to improve next.",
+   ex:["monthly payroll + reporting handled","ai flags 3 compliance items early","quarterly review with your partner","continuous tuning, no extra cost"]}
+];
+const DAYLIFE=[
+  {d:"🧑‍💼",t:"new hire starts monday",s:"you send one line. we do the rest."},
+  {d:"📄",t:"contract + onboarding",s:"generated, sent, e-signed, filed."},
+  {d:"💸",t:"payroll + benefits",s:"enrolled and set up automatically."},
+  {d:"💻",t:"systems + access",s:"provisioned, checklist complete."},
+  {d:"✅",t:"senior partner reviews",s:"signs off. you never touched it."}
+];
+(function(){
+  const tabs=document.getElementById("tabs"),host=document.getElementById("panelHost");
+  tabs.innerHTML=PHASES.map((p,i)=>`<button class="tab${i===0?" on":""}" data-i="${i}"><span class="tn">${p.n}</span>${p.tab}</button>`).join("");
+  function render(i){
+    const p=PHASES[i];
+    host.innerHTML=`<div class="panel">
+      <div>
+        <div class="when">${p.when}</div>
+        <h3>${p.h}</h3>
+        <p>${p.p}</p>
+        <div class="ex"><b>in practice — a 100-person rollout</b>
+          ${p.ex.map(e=>`<div class="row"><span class="tick">✓</span><span>${e}</span></div>`).join("")}
+        </div>
+      </div>
+      <div class="flowcard">
+        ${DAYLIFE.map(f=>`<div class="fl"><div class="d">${f.d}</div><div class="ft">${f.t}<span>${f.s}</span></div></div>`).join("")}
+      </div>
+    </div>`;
+    [...tabs.children].forEach((b,bi)=>b.classList.toggle("on",bi===i));
+  }
+  tabs.addEventListener("click",e=>{const b=e.target.closest(".tab");if(b)render(+b.dataset.i);});
+  render(0);
+})();
+
+/* ---- cost calculator ---- */
+(function(){
+  const RATE={lean:2500,typ:3600},DAL=1500;
+  const emp=document.getElementById("emp"),empVal=document.getElementById("empVal");
+  let mode="typ";
+  const els={saveBig:saveBig,saveLbl:saveLbl,valIn:valIn,valDal:valDal,barIn:barIn,barDal:barDal,
+    m3yr:m3yr,mPm:mPm,mPct:mPct,lblIn:lblIn,tnote:tnote};
+  function calc(){
+    const n=+emp.value;empVal.textContent=n;
+    const rIn=RATE[mode],inH=n*rIn,dal=n*DAL,save=inH-dal,pct=Math.round(save/inH*100);
+    els.saveBig.textContent=fmt(save);
+    els.saveLbl.textContent=`saved every year vs in-house · for ${n} employees`;
+    els.valIn.textContent=fmt(inH);els.valDal.textContent=fmt(dal);
+    els.barIn.style.width="100%";els.barDal.style.width=(dal/inH*100)+"%";
+    els.m3yr.textContent=fmtK(save*3);
+    els.mPm.textContent=fmt(DAL/12);
+    els.mPct.textContent=pct+"%";
+    els.lblIn.textContent=mode==="lean"?"in-house (lean, best-in-class)":"in-house (typical)";
+    els.tnote.textContent=mode==="lean"
+      ?"lean: a best-in-class, efficient in-house people function at about $2,500 per employee a year (Gartner). even against that, dalsson core at $1,500 saves you 40%."
+      :"typical: what most mid-market companies spend in house, about $3,600 per employee a year (PwC). dalsson core runs the whole function for $1,500, software included.";
+  }
+  emp.addEventListener("input",calc);
+  document.getElementById("modeToggle").addEventListener("click",e=>{
+    const b=e.target.closest("button");if(!b)return;mode=b.dataset.mode;
+    [...e.currentTarget.children].forEach(x=>x.classList.toggle("on",x===b));calc();
+  });
+  calc();
+})();
+
+/* ---- best practices accordion ---- */
+const BP=[
+  {t:"one source of truth",p:"your tenant is the system of record for everything — pay, people, policy. no shadow spreadsheets, no version drift, no 'which file is current?'."},
+  {t:"compliance by default",p:"obligations are built into the process, not bolted on at audit time. policies, filings and pay rules are kept current automatically, country by country."},
+  {t:"ai with a human in the loop",p:"ai drafts, checks and accelerates — payroll runs, anomaly detection, onboarding flows. a senior partner reviews and owns the call. instrumented and audited, never blind."},
+  {t:"senior hands, always",p:"a named senior partner is accountable from kickoff onward. no handoffs to a junior bench, no ticket-queue roulette. you always know who has your back."},
+  {t:"decisions from data",p:"we measure what matters — cost, time-to-hire, attrition, payroll accuracy — and bring it to a quarterly review so you steer with evidence, not vibes."},
+  {t:"employee experience first",p:"self-service that people actually use, fast answers, clean onboarding and humane offboarding. hr that employees feel as smooth, not bureaucratic."}
+];
+(function(){
+  const host=document.getElementById("bpList");
+  host.innerHTML=BP.map((b,i)=>`<div class="bp${i===0?" open":""}" data-i="${i}">
+    <div class="bph"><span class="bpn">0${i+1}</span><span class="bpt">${b.t}</span><span class="bpx">+</span></div>
+    <div class="bpb"><p>${b.p}</p></div></div>`).join("");
+  host.addEventListener("click",e=>{const c=e.target.closest(".bp");if(c)c.classList.toggle("open");});
+})();
+
+/* ---- reveal on scroll ---- */
+(function(){
+  const pops=document.querySelectorAll(".pop");
+  if(!("IntersectionObserver" in window)){pops.forEach(e=>e.classList.add("go"));return;}
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("go");obs.unobserve(e.target);}}),{threshold:.12,rootMargin:"0px 0px -4% 0px"});
+  pops.forEach(e=>obs.observe(e));
+})();
+
+/* ---- confetti on book ---- */
+(function(){
+  const cv=document.getElementById("confetti"),ctx=cv.getContext("2d");
+  let parts=[],raf=null;
+  function size(){cv.width=innerWidth;cv.height=innerHeight;}size();addEventListener("resize",size);
+  const C=["#3C5E7F","#BC6A4C","#97A98C","#D8BE82","#9FB6C2","#21222B"];
+  function burst(x,y){if(reduceMotion)return;for(let i=0;i<90;i++)parts.push({x,y,vx:(Math.random()-.5)*16,vy:-Math.random()*14-4,w:6+Math.random()*7,h:8+Math.random()*8,c:C[Math.floor(Math.random()*C.length)],a:Math.random()*6,va:(Math.random()-.5)*.4,life:1});if(!raf)loop();}
+  function loop(){raf=requestAnimationFrame(loop);ctx.clearRect(0,0,cv.width,cv.height);parts=parts.filter(p=>p.life>0);if(!parts.length){cancelAnimationFrame(raf);raf=null;return;}parts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.5;p.a+=p.va;p.life-=.012;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.a);ctx.globalAlpha=Math.max(0,p.life);ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();});}
+  const mega=document.getElementById("megaBtn");
+  const fire=()=>{const r=mega.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2);};
+  mega.addEventListener("click",fire);mega.addEventListener("mouseenter",fire,{once:true});
+})();
+</script>
+</body>
+</html>
